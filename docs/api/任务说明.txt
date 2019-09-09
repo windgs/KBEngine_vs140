@@ -1,0 +1,614 @@
+彭平 5-6 11:01:54
+
+public enum TaskEnum
+{
+    //--------任务普通属性
+
+    /// <summary>任务id</summary>
+    TaskId,
+    /// <summary>任务类型</summary>
+    TaskType,
+    /// <summary>任务名称</summary>
+    TaskName,
+    /// <summary>是否为挂机任务</summary>
+    IsAutoTask,
+    /// <summary>任务序列名称</summary>
+    TaskSortName,
+    /// <summary>父级任务id</summary>
+    FatherTaskId,
+    /// <summary>子级任务id集合</summary>
+    ChildTaskIds,
+    /// <summary>任务描叙</summary>
+    TaskDesc,
+    /// <summary>任务详细描叙</summary>
+    TaskDetailDesc,
+
+    /// <summary>任务接取npcid</summary>
+    ClaimNpcId,
+    /// <summary>任务接取npc所在地图</summary>
+    ClaimNpcMapId,
+    /// <summary>任务接取npc所在位置</summary>
+    ClaimNpcPos,
+    /// <summary>任务接取Npc未完成时对话</summary>
+    CNUnFinDiallogId,
+    /// <summary>任务接取Npc完成时对话</summary>
+    CNFinDialogId,
+
+    /// <summary>任务完成npcid</summary>
+    FinNpcId,
+    /// <summary>任务完成npc所在地图</summary>
+    FinNpcMapId,
+    /// <summary>任务完成npc所在位置</summary>
+    FinNpcPos,
+    /// <summary>任务完成Npc未完成时对话</summary>
+    FNUnFinDiallogId,
+    /// <summary>任务完成Npc完成时对话</summary>
+    FNFinDialogId,
+
+    //--------子任务抽取
+    /// <summary>按顺序进行子任务</summary>
+    ChildDoInQueue,
+    /// <summary>随机进行子任务</summary>
+    ChildDoInRandom,
+    /// <summary>手动选取自任务</summary>
+    ChildDoInSelection,
+
+    //--------任务关联
+    /// <summary>失败后父任务也失败</summary>
+    FatherFailIfChildFail,
+    /// <summary>成功后父任务也成功</summary>
+    FaterSuccIfChildSucc,
+
+    //--------任务显示信息
+    /// <summary>是否是隐藏任务</summary>
+    DispHiddenTask,
+    /// <summary>是否在未接列表显示</summary>
+    DispInClaimList,
+    /// <summary>显示等级</summary>
+    DispLevel,
+
+    //--------任务开启条件
+    /// <summary>任务是否为区域触发领取</summary>        
+    OpenCondIsTriggerArea,
+    /// <summary>任务触发区域</summary>        
+    OpenCondTriggerArea,
+    "OpenCondTriggerArea": {
+      "MapId": 1,
+      "X": 2267.81,
+      "Y": 433.62,
+      "Z": 6782.46,
+      "Width": 30.0,
+      "Length": 30.0,
+      "TriggerDis": 0.0
+    },
+    /// <summary>开启任务计次周期</summary>       
+    OpenCondCheckTaskCount,
+    /// <summary>任务计次周期</summary>   
+    OpenCondCountCycle,
+    /// <summary>任务限制次数</summary>   
+    OpenCondCountLimit,
+    /// <summary>单一角色在此任务接取间隔内，是在领取任务或者交付任务时扣除次数</summary>   
+    OpenCondTaskeState,
+    /// <summary>任务失败不记录次数</summary>   
+    OpenCondIsFailNoCount,
+    /// <summary>任务放弃不记录次数</summary> 
+    OpenCondIsAbanNoCount,
+    /// <summary>检查性别</summary> 
+    OpenCondCheckSex,
+    /// <summary>检查种族</summary> 
+    OpenCondCheckRace,
+    /// <summary>检查职业</summary> 
+    OpenCondCheckProfres,
+    /// <summary>关联任务</summary> 
+    OpenCondRelateTaskId,
+    /// <summary>关联任务状态</summary> 
+    OpenCondRelateTaskState,
+    /// <summary>是否需要检查好感度</summary> 
+    OpenCondCheckFavor,
+    /// <summary>检查好感度Npc</summary> 
+    OpenCondFavorNpc,
+    /// <summary>检查好感度等级</summary> 
+    OpenCondFavorLevel,
+    /// <summary>成功后可重复开启</summary> 
+    OpenCondRepeatIfSucess,
+    /// <summary>放弃后可重复开启</summary> 
+    OpenCondRepeatIfFail,
+
+    //--------任务领取条件
+    /// <summary>满足条件自动领取</summary>
+    ClaimCondAutoTake,
+    /// <summary>玩家等级限制</summary> 
+    //ClaimCondLevelLimit,
+    /// <summary>玩家等级下限</summary> 
+    ClaimCondLevelMin,
+    /// <summary>玩家等级上限</summary> 
+    ClaimCondLevelMax,
+    /// <summary>是否需要组队检查</summary> 
+    ClaimCondNeedCheckTeam,
+    /// <summary>组队检查</summary> 
+    ClaimCondCheckTeam,{IsTaskSharing,TeamCountLimit,NeedFollow}
+    "ClaimCondCheckTeam": {
+      "IsTaskSharing": True,
+      "TeamCountLimit": 1,
+      "NeedFollow": True
+    },
+    /// <summary>是否需要道具检查</summary> 
+    ClaimCondCheckItem,
+    /// <summary>道具检查信息</summary> 
+    ClaimCondCheckItemInfo,{Items,Count,OnlyCheck,SatisfyOne,NotOpenIfHas}
+
+
+    //--------任务领取时发放
+    /// <summary>关联小世界副本</summary> 
+    ClaimRelateInstance,
+    /// <summary>是否需要设置线索</summary> 
+    ClaimNeedSetClue,
+    /// <summary>线索ID</summary> 
+    ClaimClueID,
+    /// <summary>线索状态</summary> 
+    ClaimClueState,
+    /// <summary>领取后是否获得任务道具</summary> 
+    ClaimCanRewardITems,
+    /// <summary>领取后获得任务道具</summary> 
+    ClaimRewardItems,
+    /// <summary>是否随机发放道具</summary> 
+    ClaimRandomItems,
+    /// <summary>领取后是否传送副本</summary> 
+    ClaimCanTransIns,
+    /// <summary>领取后传送副本</summary> 
+    ClaimTransInstance,{SceneType,MapId}
+     "ClaimTransInstance": {
+      "SceneType": 2,
+      "MapId": 1033,
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    /// <summary>领取后界面对话</summary> 
+    ClaimDialog,
+    /// <summary>领取后客户端事件</summary> 
+    ClaimClientEvent,
+    /// <summary>领取后客户端事件参数</summary> 
+    ClaimEventParam,
+    /// <summary>领取后服务端事件</summary> 
+    ClaimServerEvent,
+    /// <summary>领取后触发剧情动画</summary> 
+    ClaimTriggerStoryID,
+
+    //--------任务失败条件
+    /// <summary>任务限时</summary> 
+    FailCondTimeLimit,
+    /// <summary>下线后依旧计时</summary> 
+    FailCondTimingOffline,
+    /// <summary>是否为进入区域失败</summary> 
+    FailCondIsEnterArea,
+    /// <summary>进入区域失败</summary> 
+    FailCondEnterArea,
+    /// <summary>是否为离开区域失败</summary> 
+    FailCondIsLeaveArea,
+    /// <summary>离开区域失败</summary> 
+    FailCondLeaveArea,{X,Z,Width,Length}
+    /// <summary>玩家死亡后失败</summary> 
+    FailCondIfDie,
+    /// <summary>可放弃任务</summary> 
+    FailCondCanGiveUp,
+    /// <summary>失败后任务放弃</summary> 
+    FailCondQuitIfFail,
+    /// <summary>离开副本任务失败</summary> 
+    FailCondFailIfQtInst,
+    /// <summary>副本类型</summary> 
+    FailCondInstType,
+    /// <summary>副本ID</summary> 
+    FailCondInstId,
+
+    //--------任务完成条件
+    /// <summary>无完成条件</summary> 
+    FinCondNoLimit,
+    /// <summary>是否有杀怪条件</summary> 
+    FinCondHasKillMon,
+    /// <summary>杀怪</summary> 
+    FinCondKillMonster,
+    "FinCondKillMonster": [
+      {
+        "MapId": 1,
+        "MonsterId": 11011022,
+        "X": 2210.5,
+        "Y": 443.01,
+        "Z": 6428.65,
+        "Count": 1
+      },
+      {
+        "MapId": 1,
+        "MonsterId": 0,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Count": 0
+      },
+      {
+        "MapId": 1,
+        "MonsterId": 0,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Count": 0
+      }
+    ],
+    /// <summary>是否有收集道具条件</summary> 
+    FinCondHasGatherItems,
+    /// <summary>收集道具</summary> 
+    FinCondGatherItems,
+    "FinCondGatherItems": [
+      {
+        "ItemId": 30900002,
+        "Count": 10,
+        "RelateMonster": "11011024",
+        "RelateCollect": "",
+        "MapId": 1,
+        "X": 2398.66,
+        "Y": 451.56,
+        "Z": 6743.49,
+        "Ratio": 0.2
+      },
+      {
+        "ItemId": 0,
+        "Count": 0,
+        "RelateMonster": "",
+        "RelateCollect": "",
+        "MapId": 1,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Ratio": 0.0
+      },
+      {
+        "ItemId": 0,
+        "Count": 0,
+        "RelateMonster": "",
+        "RelateCollect": "",
+        "MapId": 1,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "Ratio": 0.0
+      }
+    ],
+    /// <summary>是否需要与特定npc对话</summary> 
+    FinCondHasFinDia,
+    /// <summary>与特定npc对话</summary> 
+    FinCondFinDialogs,
+    "FinCondFinDialogs": [
+      {
+        "MapId": 1,
+        "NPCId": 18000002,
+        "X": 2267.83,
+        "Y": 432.39,
+        "Z": 6946.21,
+        "DialogId": 19000158
+      },
+      {
+        "MapId": 1,
+        "NPCId": 0,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "DialogId": 0
+      },
+      {
+        "MapId": 1,
+        "NPCId": 0,
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0,
+        "DialogId": 0
+      }
+    ],
+    /// <summary>是否需要交互采集物</summary> 
+    FinCondHasInterCollect,
+    /// <summary>交互采集物</summary> 
+    FinCondInterCollect,
+        "FinCondInterCollect": [
+      {
+        "CollId": 16000007,
+        "Count": 1,
+        "MapId": 1,
+        "X": 2971.32,
+        "Y": 572.51,
+        "Z": 6734.36
+      },
+      {
+        "CollId": 16000008,
+        "Count": 1,
+        "MapId": 1,
+        "X": 3040.25,
+        "Y": 572.51,
+        "Z": 6728.42
+      },
+      {
+        "CollId": 16000009,
+        "Count": 1,
+        "MapId": 1,
+        "X": 3008.99,
+        "Y": 572.01,
+        "Z": 6728.48
+      }
+    ],
+    /// <summary>是否为区域触发完成</summary> 
+    FinCondIsTriggerArea,
+    /// <summary>到达指定区域</summary> 
+    FinCondReachArea,{TriggerDis,X,Y,Z,Width,Length}
+    "FinCondReachArea": {
+      "MapId": 1,
+      "X": 2204.61,
+      "Y": 447.79,
+      "Z": 6661.8,
+      "Width": 70.0,
+      "Length": 70.0,
+      "TriggerDis": 10.0
+    },
+    /// <summary>全局变量</summary> 
+    FinCondGlobalValue,
+    /// <summary>完成小世界副本</summary> 
+    FinCondFinIntance,
+    /// <summary>到达等级</summary> 
+    FinCondToLevel,
+    /// <summary>是否需要激活怪物图鉴</summary> 
+    FinCondNeedActiveCard,
+    /// <summary>怪物图鉴Id</summary> 
+    FinCondMonCardId,
+    /// <summary>是否需要检查变量</summary> 
+    FinCondNeedCheckValue,
+    /// <summary>满足一条即可</summary> 
+    FinCondNeedOneValue,
+    /// <summary>检查变量</summary> 
+    FinCondCheckValue,{ID,CompareType,Value,Text}
+    "FinCondCheckValue": [
+      {
+        "ID": 1,
+        "CompareType": 0,
+        "Value": 5,
+        "Text": "\u53c2\u4e0e{0}\u6b21\u63a0\u593a\u73a9\u6cd5"
+      },
+      {
+        "ID": 2,
+        "CompareType": 0,
+        "Value": 0,
+        "Text": "0"
+      },
+      {
+        "ID": 3,
+        "CompareType": 0,
+        "Value": 0,
+        "Text": "0"
+      }
+    ],
+    /// <summary>关联任务</summary> 
+    FinCondRelateTaskId,
+    /// <summary>关联任务状态</summary> 
+    FinCondRelateTaskState,
+    /// <summary>自定义文本</summary> 
+    FinCondDefaultText,
+
+    //--------交付形式
+    /// <summary>无交付方式</summary> 
+    DeliMetdNoLimit,
+    /// <summary>与特定npc对话</summary> 
+    DeliMetdFinDialogs,
+
+    //--------任务完成奖励
+    /// <summary>奖励ID</summary> 
+    FinRewardID,
+    /// <summary>奖励任务ID</summary> 
+    FinRewardTaskID,
+    /// <summary>是否需要设置线索</summary> 
+    FinNeedSetClue,
+    /// <summary>线索ID</summary> 
+    FinClueID,
+    /// <summary>线索状态</summary> 
+    FinClueState,
+    /// <summary>奖励传送副本</summary> 
+    FinHasRewardInst,
+    /// <summary>奖励传送副本</summary> 
+    FinRewardInstance,
+    /// <summary>完成后奖励传出副本</summary>    
+    FinRewardLeaveInstance,
+    /// <summary>可领奖次数检查</summary>  
+    FinRewardCountLimit,
+    /// <summary>奖励界面对话</summary>  
+    FinRewardDialog,
+    /// <summary>任务完成客户端事件</summary> 
+    FinRewardClientEvent,
+    /// <summary>任务完成客户端事件参数</summary> 
+    FinRewardEventParam,
+    /// <summary>任务完成服务端事件</summary> 
+    FinRewardServerEvent,
+    /// <summary>任务完成触发剧情动画</summary> 
+    FinRewardTriggerStoryID,
+
+    //--------任务放弃奖励
+    /// <summary>奖励ID</summary> 
+    AbanRewardID,
+    /// <summary>奖励任务ID</summary> 
+    AbanRewardTaskID,
+    /// <summary>奖励传送副本</summary> 
+    AbanHasRewardInst,
+    /// <summary>奖励传送副本</summary> 
+    AbanRewardInstance,
+    /// <summary>奖励界面对话</summary>  
+    AbanRewardDialog,
+    /// <summary>任务放弃客户端事件</summary> 
+    AbanRewardClientEvent,
+    /// <summary>任务放弃客户端事件参数</summary> 
+    AbanRewardEventParam,
+    /// <summary>任务放弃服务端事件</summary> 
+    AbanRewardServerEvent,
+
+    //---------任务跟随NPC
+    /// <summary>任务</summary> 
+    CheckFollowNPC,
+    /// <summary>任务跟随npc</summary> 
+    TaskFollowNPC,{NpcFollowID,WorldAreaID}
+    /// <summary>任务不需要寻路</summary> 
+    NoNeedPathFinding,
+    /// <summary>点击追踪栏触发客户端事件</summary> 
+    ClickTaskClientEvent,
+    /// <summary>点击追踪栏触发客户端事件参数</summary> 
+    ClickTaskEventParam,
+}
+
+//任务相关变量
+<Properties>
+        <taskInfo>
+            <Type>    TASK_INFO          </Type>
+            <Flags>   BASE              </Flags>
+            <Persistent>    true        </Persistent>
+        </taskInfo>
+
+        <clueInfo>
+            <Type>          PY_DICT     </Type>
+            <Flags>         BASE        </Flags>
+            <Persistent>    true        </Persistent>
+        </clueInfo>
+
+        <favorsInfo>
+            <Type>          FAVOR_INFO  </Type>
+            <Flags>         BASE        </Flags>
+            <Persistent>    true        </Persistent>
+        </favorsInfo>
+    </Properties>
+
+<TASK_INFO> FIXED_DICT
+        <implementedBy>  TaskInstance.taskInfoInstance    </implementedBy>
+        <Properties>
+            <taskList>
+                <Type>  ARRAY <of>  TASK_VAL </of>   </Type>
+            </taskList>
+            <onceTaskList>
+                <Type>  ARRAY <of>  ONCE_TASK_RECORD </of>   </Type>
+            </onceTaskList>
+        </Properties>
+    </TASK_INFO>
+    
+<TASK_VAL> FIXED_DICT
+        <implementedBy>  TaskInstance.taskValInstance    </implementedBy>
+        <Properties>
+            <taskId>
+                <Type>  TASK_ID   </Type>
+            </taskId>
+            <taskType>
+                <Type>  UINT8   </Type>
+            </taskType>
+            <stat>
+                <Type>  UINT8   </Type>
+            </stat>
+            <cycleType>
+                <Type>  INT8   </Type>
+            </cycleType>
+            <limitCount>
+                <Type>  UINT32   </Type>
+            </limitCount>
+            <alreadyCount>
+                <Type>  UINT32   </Type>
+            </alreadyCount>
+            <bTeamTask>
+                <Type>  BOOL   </Type>
+            </bTeamTask>
+            <startTime>
+                <Type>  UINT32   </Type>
+            </startTime>
+            <expiredTime>
+                <Type>  UINT32   </Type>
+            </expiredTime>
+            <dungeonNo>
+                <Type>  DUNGEON_NO   </Type>
+            </dungeonNo>
+            <swOwnerGbid>
+                <Type>  PLAYER_GBID  </Type>
+            </swOwnerGbid>
+            <swHomeNUID>
+                <Type>  NUID        </Type>
+            </swHomeNUID>
+            <swHomeName>
+                <Type>  UNICODE     </Type>
+            </swHomeName>
+            <pointsDic>
+                <Type>  PYTHON     </Type>
+            </pointsDic>
+            <parentTaskId>
+                <Type>  TASK_ID   </Type>
+            </parentTaskId>
+            <childTaskIds>
+                <Type>  ARRAY <of>  TASK_ID </of>  </Type>
+            </childTaskIds>
+            <configChildTaskIds>
+                <Type>  ARRAY <of>  TASK_ID </of>  </Type>
+            </configChildTaskIds>
+            <targets>
+                <Type>  ARRAY <of>  TASK_BASE_TARGET_VAL  </of>  </Type>
+            </targets>
+        </Properties>
+    </TASK_VAL>
+    
+<ONCE_TASK_RECORD> FIXED_DICT
+        <Properties>
+            <taskId>
+                <Type>  TASK_ID   </Type>
+            </taskId>
+            <taskStat>
+                <Type>  UINT32   </Type>
+            </taskStat>
+        </Properties>
+    </ONCE_TASK_RECORD>
+    
+<TASK_BASE_TARGET_VAL> FIXED_DICT
+        <Properties>
+            <tgtType>
+                <Type>  UINT32  </Type>
+            </tgtType>
+            <tgtId>
+                <Type>  UINT32  </Type>
+            </tgtId>
+            <stepCnt>
+                <Type>  UINT32   </Type>
+            </stepCnt>
+            <dstCnt>
+                <Type>  UINT32   </Type>
+            </dstCnt>
+            <extraStr>
+                <Type>  UNICODE   </Type>
+            </extraStr>
+        </Properties>
+    </TASK_BASE_TARGET_VAL>
+    
+    
+<FAVOR_INFO> FIXED_DICT
+        <implementedBy>     FavorInfo.favorInstance    </implementedBy>
+        <Properties>
+            <favorList>
+                <Type>  ARRAY <of>  NPC_FAVOR_VAL </of>   </Type>
+            </favorList>
+        </Properties>
+    </FAVOR_INFO>
+    
+<NPC_FAVOR_VAL> FIXED_DICT
+        <Properties>
+            <npcId>
+                <Type>  NPC_ID   </Type>
+            </npcId>
+            <score>
+                <Type>  UINT32   </Type>
+            </score>
+            <step>
+                <Type>  UINT32   </Type>
+            </step>
+            <rwIds>
+                <Type>  ARRAY <of>  REWARD_ID </of>   </Type>
+            </rwIds>
+        </Properties>
+    </NPC_FAVOR_VAL>
+    
+    
+initTgtTaskInfo 有错误
+
+client:reqBuyItemsInStore->buyStoreItems->owner.bagData.
+												 ->canBuyStoreItems->owner.historyBattleFieldReputationNum|owner.histGuildContribution

@@ -1,0 +1,6 @@
+createDictDataFromPersistenStream
+
+F:\xf001\trunk\Dev\Client\Assets\StreamingAssets\Lua\UI\UILoginPanel.lua
+--≤•∑≈µ«¬º≥°æ∞“Ù¿÷
+		--CS.FMODManager.Instance:PlayMusicByAudioEnum(CS.AUDIOENUM.SCENE,CS.GlobalConst.loginSceneMusicId)
+		--CS.HuanMingBuildingManager.Instance.isRelogin = true

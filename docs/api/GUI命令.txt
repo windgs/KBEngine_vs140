@@ -1,0 +1,50 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>base进程执行测试的脚本<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>[KBEngine.entities.keys()]
+[[2204, 2009, 2148, 2001, 2002, 2170]
+
+>>>[k for k, v in KBEngine.entities.items() if v.IsAvatar == True and v.gbID == 2814759035310440449]
+[2486]
+
+>>>[k for k, v in KBEngine.entities.items() if v.IsAvatar]
+[2083]
+
+>>>[v for k, v in KBEngine.entities.items() if v.IsAvatar and v.gbID == 2814759035310440449]
+[Avatar object at 0x07E2E1D0.]
+
+>>>ps.gbId2box
+{2814759035679539201: Base id:503, utype:39, component=baseapp[4227002], addr: 192.168.16.155:8572., 2814759035310440449: Avatar object at 0x081A9038.}
+
+>>>503 not in ps.gbId2box
+True
+
+>>>ps.gbId2box.keys()
+dict_keys([2814759035679539201, 2814759035310440449])
+
+>>>import utils; ps = utils.getEntity('PlayerStub')
+
+>>>ps
+PlayerStub object at 0x07B13948.
+
+>>import utils; av = utils.getEntity('Avatar')
+
+>>>av
+Avatar object at 0x07FDB500.
+
+>>>KBEngine.entities[6115]
+Avatar object at 0x0837C1D0.
+
+>>>KBEngine.entities[6115].transportGoodsInfo.tTaskExpireTime
+0
+
+>>>KBEngine.entities[6115].transportGoodsInfo.tTaskExpireTime = 123456
+
+
+>>>KBEngine.entities[6115].transportGoodsInfo.tTaskExpireTime
+123456
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>cell进程执行测试的脚本<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>[(v.name,v.id,v.gbId) for k, v in KBEngine.entities.items() if v.IsAvatar]
+[('糖糖小雨', 2083, 2814759035310440449)]
